@@ -9,7 +9,6 @@ bool gameOver = false;
 
 int score;
 
-
 using namespace std;
 
 class Snake {
@@ -88,10 +87,10 @@ class Snake {
             }
 
             if (yHead>=HEIGHT){
-                yHead=0;
-            } else if (yHead<0){
+                yHead=-1;
+            } else if (yHead<=-1){
                 yHead=HEIGHT-1;
-        }
+            }
         }
         void checkCollision(){
             for (int i=0; i<tailX.size()-1;i++){
@@ -189,7 +188,7 @@ void Control(){
             break;
         case 'd':
             snake.change_dir('d');
-            break;                    
+            break;                
         default:
             break;
         }
